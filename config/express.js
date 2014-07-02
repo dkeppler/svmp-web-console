@@ -155,7 +155,7 @@ module.exports = function (db) {
         });*/
 
         return res.send(500, {
-            message: "Oops, there was an error.  Please try again."
+            message: 'Oops, there was an error.  Please try again.'
         });
     });
 

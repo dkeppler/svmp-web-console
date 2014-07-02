@@ -37,7 +37,7 @@ openstack.init = function () {
 openstack.listVolumes = function() {
     openstack.blockClient.getVolumes(false, function(err,r) {
         if(err) {
-            console.log("ERROR: ",err);
+            console.log('ERROR: ',err);
         } else {
             console.log(r);
         }
@@ -53,8 +53,8 @@ openstack.listVolumes = function() {
 openstack.createVolumeForUser = function (user) {
     var deferred = Q.defer();
 
-    var nme = user.username + "_volume";
-    var desc = "Block Storage for: " + user.username;
+    var nme = user.username + '_volume';
+    var desc = 'Block Storage for: ' + user.username;
 
     var goldId = config.svmp.volumeSnapId;
     var goldSize = config.svmp.volumeDefaultSize;

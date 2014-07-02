@@ -26,8 +26,8 @@ angular.module('users').factory('Volume', ['$q', '$timeout', '$rootScope', '$htt
               Used for testing UI
 
              var makeId = function () {
-             var text = "";
-             var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+             var text = '';
+             var possible = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
              for (var i = 0; i < 30; i++)
              text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -49,7 +49,7 @@ angular.module('users').factory('Volume', ['$q', '$timeout', '$rootScope', '$htt
              */
             $http({
                 url: '/users/create/volume',
-                method: "POST",
+                method: 'POST',
                 data: { 'uid': user._id }
             }).then(function (response) {
                     // success

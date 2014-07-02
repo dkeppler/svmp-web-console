@@ -33,11 +33,11 @@ module.exports = {
     volumeDefaultSize: 6,
 
     openstack: {
-        authUrl: "http://localhost:5000/",
-        username: "test",
-        password: "test",
-        tenantId: "0123456789abcdef0123456789abcdef",
-        tenantName: "test",
-        region: "RegionOne"
+        authUrl: 'http://localhost:5000/',
+        username: 'test',
+        password: 'test',
+        tenantId: '0123456789abcdef0123456789abcdef',
+        tenantName: 'test',
+        region: 'RegionOne'
     }
 };

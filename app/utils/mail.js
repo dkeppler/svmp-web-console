@@ -21,8 +21,8 @@
 var nodemailer = require('nodemailer'),
     config = require('../../config/config');
 
-var smtpTransport = nodemailer.createTransport("SMTP", {
-    service: "Gmail",
+var smtpTransport = nodemailer.createTransport('SMTP', {
+    service: 'Gmail',
     auth: {
         user: config.svmp.smtp.username,
         pass: config.svmp.smtp.password
@@ -34,7 +34,7 @@ function mailIt(options) {
     if (config.svmp.sendmail) {
         smtpTransport.sendMail(options, function (error, responseStatus) {
             if (error) {
-                console.log("Error sending email to user: ", error);
+                console.log('Error sending email to user: ', error);
             }
         });
     }
@@ -44,9 +44,9 @@ exports.sendToUser = function (email) {
     var opts = {
         from: 'noreplay@svmpadmin', // sender address
         to: email, // list of receivers
-        subject: "SVMP Account Approved",
-        text: "Your SVMP account has been approved."
-    }
+        subject: 'SVMP Account Approved',
+        text: 'Your SVMP account has been approved.'
+    };
 
     mailIt(opts);
 };
@@ -55,9 +55,9 @@ exports.sendToAdmin = function () {
     var opts = {
         from: 'noreplay@svmpadmin', // sender address
         to: config.svmp.admincontact, // list of receivers
-        subject: "SVMP: Pending user account",
-        text: "A User has registered with SVMP. Please check the SVMP admin console for pending SVMP accounts"
-    }
+        subject: 'SVMP: Pending user account',
+        text: 'A User has registered with SVMP. Please check the SVMP admin console for pending SVMP accounts'
+    };
 
     mailIt(opts);
 };
