@@ -42,11 +42,13 @@ module.exports = function () {
         /**
          * Create the local configuration file if it doesn't exist
          */
-        fs.exists(path.resolve(__dirname,'./config-local.js'), function (exists) {
+// XXX: The callback here never seems to be getting called for some reason?
+//      Neither branch of the if(!exists) is executing when run as '$ grunt'
+        fs.exists(__dirname + '/config-local.js', function (exists) {
             if(!exists) {
                 console.log('local configuration file not found. Creating...');
-                fs.writeFileSync(path.resolve(__dirname,'./config-local.js'),
-                    fs.readFileSync(path.resolve(__dirname,'./_config.local.template.js')));
+                fs.writeFileSync(__dirname + '/config-local.js',
+                    fs.readFileSync(__dirname + '/_config.local.template.js'));
             } else {
                 console.log('existing local configuration file found');
             }
